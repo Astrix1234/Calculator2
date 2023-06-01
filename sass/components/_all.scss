@@ -44,6 +44,7 @@ body {
       justify-content: center;
       align-items: center;
       background-image: radial-gradient(rgb(230, 210, 210), rgb(146, 111, 111));
+      transition: all 250ms ease-in-out;
       cursor: pointer;
       &:hover,
       &:focus {
@@ -83,6 +84,8 @@ body {
     padding: 10px;
     background-image: radial-gradient(rgb(230, 210, 210), rgb(123, 85, 85));
     font-weight: 600;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
     &:hover,
     &:focus {
       background-image: radial-gradient(rgb(205, 179, 179), rgb(138, 91, 91));
