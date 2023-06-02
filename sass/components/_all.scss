@@ -141,7 +141,7 @@ body {
   visibility: visible;
   opacity: 1;
   transform: scale(1) rotate(360deg);
-  transition: visibility 400ms ease-in-out, opacity 400ms ease-in-out,
+  transition: visibility 600ms ease-in-out, opacity 600ms ease-in-out,
     transform 400ms ease-in-out;
 }
 .is-hidden {
