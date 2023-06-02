@@ -1,9 +1,9 @@
-@property $firstColor {
+@property --firstColor {
   syntax: '<color>';
   inherits: false;
   initial-value: rgb(230, 210, 210);
 }
-@property $secondColor {
+@property --secondColor {
   syntax: '<color>';
   inherits: false;
   initial-value: rgb(146, 111, 111);
