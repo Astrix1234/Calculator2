@@ -82,9 +82,9 @@ function addToHistory() {
 }
 
 function displayNumber() {
-  if (this.textContent === ',' && currentNumber.innerHTML.includes(',')) return;
-  if (this.textContent === ',' && currentNumber.innerHTML === '')
-    return (currentNumber.innerHTML = '0,');
+  if (this.textContent === '.' && currentNumber.innerHTML.includes('.')) return;
+  if (this.textContent === '.' && currentNumber.innerHTML === '')
+    return (currentNumber.innerHTML = '0.');
   currentNumber.innerHTML += this.textContent;
 }
 
