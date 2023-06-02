@@ -12,35 +12,6 @@ body {
   background-image: linear-gradient(to left, #eb5757, #000000);
   text-align: center;
 }
-.open {
-  font-size: 25px;
-  margin-top: 300px;
-  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgb(123, 85, 85);
-  border-radius: 50%;
-  height: 100px;
-  width: 300px;
-  color: rgb(78, 0, 0);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-  background-image: radial-gradient(rgb(230, 210, 210), rgb(123, 85, 85));
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-image 250ms ease-in-out;
-  &:hover,
-  &:focus {
-    background-image: radial-gradient(rgb(205, 179, 179), rgb(138, 91, 91));
-    visibility: visible;
-    opacity: 1;
-    transform: scale(1) rotate(360deg);
-  }
-}
-.clouse {
-  @extend .open;
-  font-size: 16px;
-  margin-top: 20px;
-  height: 50px;
-  width: 200px;
-}
 @property --firstColor {
   syntax: '<color>';
   inherits: false;
@@ -50,6 +21,35 @@ body {
   syntax: '<color>';
   inherits: false;
   initial-value: rgb(146, 111, 111);
+}
+.open {
+  --firstColor: rgb(230, 210, 210);
+  --secondColor: rgb(146, 111, 111);
+  font-size: 25px;
+  margin-top: 300px;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgb(123, 85, 85);
+  border-radius: 50%;
+  height: 100px;
+  width: 300px;
+  color: rgb(78, 0, 0);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  background-image: radial-gradient(var(--firstColor), var(--secondColor));
+  transition: --firstColor 700ms ease-in-out, --secondColor 700ms ease-in-out;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    --firstColor: rgb(205, 179, 179);
+    --secondColor: rgb(138, 91, 91);
+  }
+}
+.clouse {
+  @extend .open;
+  font-size: 16px;
+  margin-top: 20px;
+  height: 50px;
+  width: 200px;
 }
 
 .calculator {
@@ -131,13 +131,14 @@ body {
     border: 1px solid rgb(123, 85, 85);
     border-radius: 50%;
     padding: 10px;
-    background-image: radial-gradient(rgb(230, 210, 210), rgb(123, 85, 85));
+    background-image: radial-gradient(var(--firstColor), var(--secondColor));
     font-weight: 600;
     cursor: pointer;
-    transition: all 250ms ease-in-out;
+    transition: --firstColor 700ms ease-in-out, --secondColor 700ms ease-in-out;
     &:hover,
     &:focus {
-      background-image: radial-gradient(rgb(205, 179, 179), rgb(138, 91, 91));
+      --firstColor: rgb(205, 179, 179);
+      --secondColor: rgb(138, 91, 91);
     }
     display: none;
   }
@@ -158,7 +159,7 @@ body {
   opacity: 1;
   transform: scale(1) rotate(360deg);
   transition: visibility 600ms ease-in-out, opacity 600ms ease-in-out,
-    transform 400ms ease-in-out;
+    transform 600ms ease-in-out;
 }
 .is-hidden {
   visibility: hidden;
