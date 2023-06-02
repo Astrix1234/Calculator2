@@ -1,3 +1,17 @@
+const openBth = document.querySelector('.open');
+const clouseBtn = document.querySelector('.clouse');
+const calculator = document.querySelector('.not-hidden');
+
+openBth.addEventListener('click', openCalculator);
+clouseBtn.addEventListener('click', clouseCalculator);
+
+function openCalculator() {
+  calculator.classList.remove('is-hidden');
+}
+function clouseCalculator() {
+  calculator.classList.add('is-hidden');
+}
+
 const previousNumber = document.querySelector('.previous-number');
 const mathSign = document.querySelector('.math-sign');
 const currentNumber = document.querySelector('.current-number');
