@@ -32,7 +32,7 @@ historyBtn.addEventListener('click', clearHistory);
 
 function operate() {
   if (currentNumber.innerHTML === '' && this.textContent === '-') {
-    return currentNumber.innerHTML === '-';
+    return (currentNumber.innerHTML = '-');
   } else if (currentNumber.innerHTML === '') {
     return;
   }
