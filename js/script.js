@@ -59,7 +59,7 @@ function showResult() {
     case '*':
       result = a * b;
       break;
-    case '&#247':
+    case ':':
       result = b / a;
       break;
     case 'x^':
